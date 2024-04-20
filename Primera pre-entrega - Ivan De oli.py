@@ -66,9 +66,11 @@ def menu():
 
     while(True):
         print('[1]Login\n[2]Registro\n[3]Mostrar base de datos')
-
-        option = int(input('Elija una opción: '))
-
+        try:
+            option = int(input('Elija una opción: '))
+        except ValueError:
+            print('Ingrese un valor númerico.')
+            continue
         if option == 1:
             return login(user_list)
         elif option == 2:
