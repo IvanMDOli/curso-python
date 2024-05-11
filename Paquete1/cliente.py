@@ -1,21 +1,21 @@
 # Creación de la clase
 
 class Cliente():
-    def __init__(self, nombre, apellido, edad, intereses, email):
+    def __init__(self, nombre, apellido, edad, interes, email):
         
         self.nombre = nombre
         self.apellido = apellido
         self.__edad = edad
-        self.intereses = intereses
+        self.interes = interes
         self.email = email
         self.deseados = []
 
     def __str__(self):
-        return f'Se ha creado un nuevo cliente.\nCliente: {self.nombre} {self.apellido}\nEdad: {self.__edad} años.\nIntereses: {self.intereses}'
+        return f'\nSe ha creado un nuevo cliente.\nCliente: {self.nombre} {self.apellido}\nEdad: {self.__edad} años.\nInteres: {self.interes}'
     
     def comprar(self, cantidad, producto, tienda): # Método de compra
-        print(f'El cliente {self.nombre} {self.apellido} ha comprado {cantidad} {producto} en la tienda {tienda}.')
-        return print(f'Se ha enviado un correo con su factura a {self.email}.')
+        print(f'\nEl cliente {self.nombre} {self.apellido} ha comprado {cantidad} {producto} en la tienda {tienda}.\n')
+        return print(f'\nSe ha enviado un correo con su factura a {self.email}.\n')
     
     def lista_deseados(self, producto): # Método para agregar a lista de deseados
         if isinstance(producto, list):

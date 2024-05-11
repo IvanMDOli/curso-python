@@ -1,4 +1,5 @@
 import json
+from Paquete1.menu_cliente import menu_cliente, cliente_list
 
 # Función para cargar los datos desde un archivo JSON
 
@@ -108,7 +109,7 @@ def menu(BD):
 
         for user in BD:
             if user["login"] == True:
-                print('[1]Mostrar usuario\n[2]Logout\n[3]Mostrar base de datos\n')
+                print('[1] Mostrar usuario\n[2] Logout\n[3] Mostrar base de datos\n[4] Menu de Cliente\n[5] Finalizar programa\n')
                 try:
                     option = int(input('Elija una opción: '))
                 except ValueError:
@@ -120,10 +121,14 @@ def menu(BD):
                     return logout(BD, user["id"])
                 elif option == 3:
                     return bd_info(BD)
+                elif option == 4:
+                    menu_cliente(cliente_list)
+                elif option == 5:
+                    return print('Finalizando programa.')
                 else:
                     print('\nOpción inválida\n')
         else:
-            print('[1]Login\n[2]Registro\n')
+            print('[1] Login\n[2] Registro\n[3] Menu de Cliente\n[4] Finalizar programa\n')
             try:
                 option = int(input('Elija una opción: '))
             except ValueError:
@@ -133,5 +138,9 @@ def menu(BD):
                 return login(BD)
             elif option == 2:
                 return register(BD)
+            elif option == 3:
+                menu_cliente(cliente_list)
+            elif option == 4:
+               return print('Finalizando programa.')
             else:
                 print('\nOpción inválida\n')
